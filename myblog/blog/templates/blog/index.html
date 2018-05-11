@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My blog</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/index.css'%}">
+</head>
+<body>
+	<div class="side-bar">
+		<div class="header">
+			<a href="http://127.0.0.1:8000/blog/">Hanying</a>
+		</div>
+		<img src="{% static 'blog/dota2.jpg' %}" alt="logo">
+		<div class="nav">
+			<div class="item"><a href="#">关于我</a></div>
+			<div class="item"><a href="#">联系我</a></div>
+			<div class="item"><a href="#">捐助我</a></div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="article-list">
+			<div class="item">
+			{% for post in post_list %}
+			<div class="title"><a href="{{ post.get_absoluted_url }}">
+			{{ post.title }}</a></div>
+			<div class="author">{{ post.author }}</div>
+			<div class="tag">{{ post.tag }}</div>
+			<div class="created_time">{{ post.created_time }}</div>
+			<div class="text">{{ post.text }}</div>
+			{% endfor %}	
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

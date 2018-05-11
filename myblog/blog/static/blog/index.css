@@ -1,0 +1,64 @@
+body{
+	background: black;
+}
+
+.side-bar{
+	float: left;
+	width: 20%;
+	height: 100%;
+	position: fixed;
+}
+img{
+	width: 80%;
+	position: relative;
+	top: 100px;
+}
+.main{
+	float: right;
+	width: 80%;
+	background: white;
+}
+.header a:-webkit-any-link {
+	font-size:30px;
+	text-decoration: none;
+	color: white;
+	padding: 20px 70px;
+	position: relative;
+	top: 50px;
+
+}
+.nav a:-webkit-any-link {
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	padding: 20px 80px;
+	display: block;
+	margin-top: 20px;
+	position: relative;
+	top: 120px;
+}
+.main > *{
+	margin-right: 30%;
+	padding: 20px 30px;
+
+}
+.article-list a:-webkit-any-link {
+	font-size: 25px;
+	text-decoration: none;
+	color: black;
+	font-weight: 10px;
+	padding: 20px;
+	display: block;
+	text-align: center;
+}
+.author,
+.tag,
+.created_time{
+	text-align: right;
+}
+.text{
+	font-size: 18px;
+	line-height: 2.0;
+	word-spacing: 3px;
+	text-align: justify;
+}
