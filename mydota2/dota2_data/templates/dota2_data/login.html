@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>register</title>
+</head>
+<body>
+	<form action ="{% url 'login' %}" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+		{% crsf_token %}
+		<input type="text" name="username" id="username" placeholder="手机号码">
+		<input type="password" name="password" id="password" placeholder="登陆密码" value="">
+		<input type="submit" class="submit" value="注册">
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static 'dota2_data/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'dota2_data/detail.css' %}">
+	<script src="{% static 'dota2_data/jquery.min.js' %}"></script>
+	<script src="{% static 'dota2_data/bootstrap.min.js' %}"></script>
+	<title>Dota2</title>
+</head>
+<body>
+	<div id='left'>
+		<ul class="nav nav-tabs">
+			<li><a href="{% url 'dota2_data:index' %}">
+				Dota2</a></li>
+			<li><a href="{% url 'dota2_data:index' %}">首页</a></li>
+			<li><a href="#">英雄</a></li>
+			<li><a href="#">物品</a></li>
+			<li><a href="#">攻略</a></li>
+			<button id="bt1"><a href="#">登陆</a></button>
+			<button id="bt2"><a href="#">注册</a></button>
+		</ul>
+	</div>
+	<div class="main">
+		<div class="col-md-6">
+			<div class="data">
+				<ul><h3>英雄资料</h3>
+					<li>英雄名：<br> {{ heros.name }}</li>
+					<li>背景：<br>{{ heros.background }}</li>
+					<li>属性：<br> {{ heros.attr }}</li>
+					<li>天赋：<br> {{ heros.talent }}</li>
+					<li>技能：<br></li>
+					{% for skill in heros.skills_set.all %}
+					<p>{{ skill.name }}<br>
+					{{ skill.detail }}</p>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="strategy">
+				<h3>攻略区</h3>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

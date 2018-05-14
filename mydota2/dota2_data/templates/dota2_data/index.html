@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static 'dota2_data/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'dota2_data/index.css' %}">
+	<script src="{% static 'dota2_data/jquery.min.js' %}"></script>
+	<script src="{% static 'dota2_data/bootstrap.min.js' %}"></script>
+	<title>Dota2</title>
+</head>
+<body>
+	<div id='left'>
+		<ul class="nav nav-tabs" >
+			<li><a href="{% url 'dota2_data:index' %}">
+				Dota2</a></li>
+			<li><a href="{% url 'dota2_data:index' %}">首页</a></li>
+			<li><a href="#">英雄</a></li>
+			<li><a href="#">物品</a></li>
+			<li><a href="#">攻略</a></li>
+			<button id="bt1"><a href="#">登陆</a></button>
+			<button id="bt2"><a href="#">注册</a></button>
+		</ul>
+	</div>
+	<div class="container">
+		{% if hero_list %}
+		<div class="col-md-12">
+			<div class="main">
+				{% for hero in hero_list %}
+					<a href="{% url 'dota2_data:detail' hero.id %}">
+					<img src="{{ hero.img.url }}">
+					</a>
+				{% endfor %}
+			{% else %}
+				<p>No available img.</p>
+			</div>
+		{% endif %}
+		</div>
+	</div>
+</body>
+</html>
